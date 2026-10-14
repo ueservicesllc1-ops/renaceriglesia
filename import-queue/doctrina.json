@@ -1,0 +1,348 @@
+{
+  "meta": {
+    "type": "doctrina",
+    "documentType": "DOCTRINA",
+    "title": "DECLARACIÓN DE FE Y DOCTRINA DE RENACER CHURCH",
+    "organization": "RENACER CHURCH, INC.",
+    "publicName": "RENACER CHURCH",
+    "legalName": "RENACER CHURCH, INC.",
+    "tagline": "Renacer, un nuevo inicio",
+    "taglineEnglish": "RENACER — A New Beginning",
+    "nature": "Iglesia cristiana evangélica pentecostal independiente/no denominacional.",
+    "author": "Luis Uchubanda Falconí",
+    "version": "1.0",
+    "status": "BORRADOR",
+    "language": "es",
+    "createdAt": "2026-09-03T00:00:00.000Z",
+    "description": "Declaración de Fe y Doctrina Oficial de RENACER CHURCH en 20 Artículos Fundamentales"
+  },
+  "data": [
+    {
+      "title": "ARTÍCULO 1 — LAS SAGRADAS ESCRITURAS",
+      "slug": "articulo-1-las-sagradas-escrituras",
+      "docNumber": "REN-DOC-001",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Autoridad Doctrinal",
+      "status": "BORRADOR",
+      "content": "RENACER cree que la Biblia es inspirada por Dios y constituye la autoridad suprema para la fe, doctrina y vida cristiana.\n\nEl Antiguo y el Nuevo Testamento forman parte de la Palabra de Dios y son útiles para enseñanza, corrección, instrucción y formación espiritual.\n\nRENACER reconoce que los creyentes viven bajo el Nuevo Pacto y la gracia de Dios, y no bajo la obligación de guardar el sistema de la Ley mosaica como medio de justificación.\n\nLa doctrina de RENACER debe permanecer sometida a las Sagradas Escrituras.",
+      "biblicalReferences": [
+        "2 Timoteo 3:16-17",
+        "2 Pedro 1:20-21",
+        "Hebreos 8:6-13",
+        "Romanos 6:14",
+        "Gálatas 3:23-25"
+      ],
+      "tags": ["escrituras", "biblia", "inspiracion", "autoridad", "nuevo pacto"]
+    },
+    {
+      "title": "ARTÍCULO 2 — DIOS",
+      "slug": "articulo-2-dios",
+      "docNumber": "REN-DOC-002",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Teología Propia",
+      "status": "BORRADOR",
+      "content": "RENACER cree en un solo Dios, eterno, creador y soberano, quien existe eternamente en tres personas: Padre, Hijo y Espíritu Santo.\n\nCada persona de la Trinidad es verdaderamente Dios.",
+      "biblicalReferences": [
+        "Deuteronomio 6:4",
+        "Mateo 28:19",
+        "2 Corintios 13:14"
+      ],
+      "tags": ["dios", "trinidad", "creador", "soberania"]
+    },
+    {
+      "title": "ARTÍCULO 3 — JESUCRISTO",
+      "slug": "articulo-3-jesucristo",
+      "docNumber": "REN-DOC-003",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Cristología",
+      "status": "BORRADOR",
+      "content": "RENACER cree que Jesucristo es el Hijo eterno de Dios, plenamente Dios y plenamente hombre.\n\nRENACER cree:\n- en su nacimiento virginal;\n- que María era virgen al momento del nacimiento de Jesús;\n- que María posteriormente concibió y dio a luz otros hijos;\n- en la vida sin pecado de Cristo;\n- en su muerte literal en la cruz por los pecados;\n- en su resurrección corporal/literal;\n- en su señorío y divinidad.",
+      "biblicalReferences": [
+        "Juan 1:1,14",
+        "Mateo 1:18-25",
+        "Mateo 13:55-56",
+        "Hebreos 4:15",
+        "1 Corintios 15:3-4",
+        "Filipenses 2:5-11"
+      ],
+      "tags": ["jesucristo", "hijo de dios", "nacimiento virginal", "resurreccion", "salvador"]
+    },
+    {
+      "title": "ARTÍCULO 4 — EL ESPÍRITU SANTO",
+      "slug": "articulo-4-el-espiritu-santo",
+      "docNumber": "REN-DOC-004",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Pneumatología",
+      "status": "BORRADOR",
+      "content": "RENACER cree en la persona y obra del Espíritu Santo.\n\nRENACER cree que el bautismo en el Espíritu Santo es una experiencia disponible para los creyentes y que puede ocurrir de manera posterior a la conversión.\n\nEl Espíritu Santo capacita al creyente para vivir, servir y ministrar.",
+      "biblicalReferences": [
+        "Hechos 1:8",
+        "Hechos 2:1-4",
+        "Hechos 19:1-6",
+        "Juan 14:16-17",
+        "Gálatas 5:22-23"
+      ],
+      "tags": ["espiritu santo", "bautismo en el espiritu", "poder", "ministerio"]
+    },
+    {
+      "title": "ARTÍCULO 5 — SALVACIÓN Y POSIBILIDAD DE APOSTASÍA",
+      "slug": "articulo-5-salvacion-y-posibilidad-de-apostasia",
+      "docNumber": "REN-DOC-005",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Soteriología",
+      "status": "BORRADOR",
+      "content": "RENACER cree que la salvación es por gracia mediante la fe en Jesucristo.\n\nLa persona responde mediante arrepentimiento y fe.\n\nLas buenas obras y una vida cristiana saludable son fruto de la salvación y no el precio que compra la salvación.\n\nRENACER también cree que una persona que verdaderamente ha creído puede posteriormente abandonar deliberadamente y rechazar a Cristo y, de esta manera, perder o renunciar voluntariamente a la salvación.\n\nLa doctrina NO debe afirmar que cada pecado automáticamente hace perder la salvación.\n\nLa pérdida de salvación se relaciona con el abandono deliberado y rechazo de Cristo.",
+      "biblicalReferences": [
+        "Efesios 2:8-10",
+        "Hebreos 3:12-14",
+        "Hebreos 6:4-6",
+        "Hebreos 10:26-29",
+        "2 Pedro 2:20-22",
+        "Juan 15:6"
+      ],
+      "tags": ["salvacion", "gracia", "fe", "arrepentimiento", "apostasia", "perseverancia"]
+    },
+    {
+      "title": "ARTÍCULO 6 — BAUTISMO EN AGUA",
+      "slug": "articulo-6-bautismo-en-agua",
+      "docNumber": "REN-DOC-006",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Ordenanzas",
+      "status": "BORRADOR",
+      "content": "RENACER practica el bautismo en agua de personas que personalmente han profesado fe en Jesucristo y han decidido seguirlo.\n\nRENACER no practica el bautismo de bebés.\n\nEl bautismo se realiza por inmersión.\n\nEl bautismo representa identificación con Cristo, arrepentimiento, fe y una nueva vida.",
+      "biblicalReferences": [
+        "Mateo 28:19",
+        "Marcos 16:16",
+        "Hechos 2:38",
+        "Hechos 8:36-38",
+        "Romanos 6:3-4",
+        "Colosenses 2:12"
+      ],
+      "tags": ["bautismo", "inmersion", "ordenanzas", "profesion de fe"]
+    },
+    {
+      "title": "ARTÍCULO 7 — LA CENA DEL SEÑOR",
+      "slug": "articulo-7-la-cena-del-senor",
+      "docNumber": "REN-DOC-007",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Ordenanzas",
+      "status": "BORRADOR",
+      "content": "RENACER practica la Cena del Señor como una comunión espiritual y memorial de Jesucristo.\n\nRENACER no enseña que el pan y el vino/jugo se transformen literalmente en el cuerpo y sangre de Cristo.\n\nLa participación está reservada para personas bautizadas.\n\nLa frecuencia de celebración será establecida por RENACER mediante reglamentación interna.",
+      "biblicalReferences": [
+        "Lucas 22:19-20",
+        "1 Corintios 10:16-17",
+        "1 Corintios 11:23-29"
+      ],
+      "tags": ["cena del senor", "santa cena", "memorial", "comunion", "ordenanzas"]
+    },
+    {
+      "title": "ARTÍCULO 8 — DONES ESPIRITUALES",
+      "slug": "articulo-8-dones-espirituales",
+      "docNumber": "REN-DOC-008",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Pneumatología y Dones",
+      "status": "BORRADOR",
+      "content": "RENACER cree que los dones espirituales descritos en la Biblia continúan vigentes.\n\nEsto incluye, entre otros:\n- sanidad;\n- profecía;\n- lenguas;\n- interpretación de lenguas;\n- discernimiento;\n- milagros;\n- señales;\n- otros dones bíblicamente descritos.\n\nLos dones deben ejercerse conforme a las Escrituras y con orden.",
+      "biblicalReferences": [
+        "Romanos 12:6-8",
+        "1 Corintios 12:4-11",
+        "1 Corintios 14:40",
+        "Efesios 4:11-12"
+      ],
+      "tags": ["dones espirituales", "vigencia", "orden", "milagros", "sanidad"]
+    },
+    {
+      "title": "ARTÍCULO 9 — LENGUAS",
+      "slug": "articulo-9-lenguas",
+      "docNumber": "REN-DOC-009",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Pneumatología y Dones",
+      "status": "BORRADOR",
+      "content": "RENACER cree que hablar en lenguas es una manifestación espiritual válida.\n\nEn reuniones públicas debe existir orden.\n\nCuando se presenta un mensaje dirigido a la congregación en lenguas, debe existir interpretación conforme al orden bíblico.\n\nNo presentar las lenguas como mecanismo de superioridad espiritual.",
+      "biblicalReferences": [
+        "1 Corintios 12:10,30",
+        "1 Corintios 14:2,13,27-28,39-40"
+      ],
+      "tags": ["lenguas", "interpretacion", "orden congregacional", "humildad"]
+    },
+    {
+      "title": "ARTÍCULO 10 — PROFECÍA",
+      "slug": "articulo-10-profecia",
+      "docNumber": "REN-DOC-010",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Pneumatología y Dones",
+      "status": "BORRADOR",
+      "content": "RENACER cree en el don de profecía.\n\nLa profecía debe:\n- ser sometida a evaluación;\n- mantenerse dentro del orden bíblico;\n- nunca contradecir las Escrituras;\n- nunca recibir la misma autoridad que las Sagradas Escrituras.\n\nLa Biblia permanece como autoridad suprema.",
+      "biblicalReferences": [
+        "1 Corintios 14:3,29,32",
+        "1 Tesalonicenses 5:19-21",
+        "1 Juan 4:1"
+      ],
+      "tags": ["profecia", "discernimiento", "evaluacion", "supremacia biblica"]
+    },
+    {
+      "title": "ARTÍCULO 11 — SANIDAD DIVINA",
+      "slug": "articulo-11-sanidad-divina",
+      "docNumber": "REN-DOC-011",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Ministerio y Milagros",
+      "status": "BORRADOR",
+      "content": "RENACER cree que Dios sana y continúa realizando milagros.\n\nLa iglesia ora por sanidad y puede ministrar mediante oración, imposición de manos y dones espirituales conforme a las Escrituras.\n\nRENACER no enseña que Dios esté obligado a sanar a toda persona en toda circunstancia.\n\nLa ausencia de sanidad no debe utilizarse automáticamente para acusar al enfermo de falta de fe.",
+      "biblicalReferences": [
+        "Isaías 53:4-5",
+        "Marcos 16:17-18",
+        "Santiago 5:14-16",
+        "2 Corintios 12:7-9"
+      ],
+      "tags": ["sanidad divina", "milagros", "oracion", "soberania de dios", "gracia"]
+    },
+    {
+      "title": "ARTÍCULO 12 — LA IGLESIA",
+      "slug": "articulo-12-la-iglesia",
+      "docNumber": "REN-DOC-012",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Eclesiología",
+      "status": "BORRADOR",
+      "content": "RENACER cree que la Iglesia es el cuerpo de Cristo y está formada por personas que han puesto su fe en Jesucristo.\n\nLa iglesia existe para:\n- adorar a Dios;\n- proclamar el evangelio;\n- hacer discípulos;\n- enseñar la Palabra;\n- servir;\n- cuidar a las personas;\n- desarrollar líderes;\n- ministrar mediante el Espíritu Santo;\n- alcanzar a otras personas y comunidades.",
+      "biblicalReferences": [
+        "Mateo 28:18-20",
+        "Hechos 2:41-47",
+        "Efesios 1:22-23",
+        "Efesios 4:11-16",
+        "1 Pedro 2:9-10"
+      ],
+      "tags": ["iglesia", "cuerpo de cristo", "gran comision", "discipulado", "mision"]
+    },
+    {
+      "title": "ARTÍCULO 13 — HOMBRES Y MUJERES EN EL MINISTERIO",
+      "slug": "articulo-13-hombres-y-mujeres-en-el-ministerio",
+      "docNumber": "REN-DOC-013",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Ministerio y Liderazgo",
+      "status": "BORRADOR",
+      "content": "RENACER cree que tanto hombres como mujeres pueden servir a Dios en el ministerio.\n\nHombres y mujeres pueden, conforme a su llamado, formación y carácter:\n- Predicar;\n- Enseñar;\n- Evangelizar;\n- Pastorear;\n- Liderar;\n- Ministrar;\n- Servir;\n- Ejercer dones espirituales;\n- Recibir credenciales ministeriales;\n- Ser ordenados.\n\nLa aptitud ministerial debe evaluarse conforme a doctrina, carácter, llamado, formación y capacidad para servir.",
+      "biblicalReferences": [
+        "Gálatas 3:28",
+        "Hechos 2:17-18",
+        "Hechos 18:26",
+        "Romanos 16:1-7",
+        "Filipenses 4:2-3"
+      ],
+      "tags": ["mujeres en el ministerio", "hombres en el ministerio", "ordenacion", "liderazgo", "igualdad en cristo"]
+    },
+    {
+      "title": "ARTÍCULO 14 — EL MATRIMONIO",
+      "slug": "articulo-14-el-matrimonio",
+      "docNumber": "REN-DOC-014",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Familia y Matrimonio",
+      "status": "BORRADOR",
+      "content": "RENACER cree que el matrimonio es un pacto establecido por Dios entre un hombre y una mujer.\n\nEl matrimonio está diseñado para una unión fiel y permanente.\n\nRENACER no reconoce como matrimonio religioso el matrimonio entre personas del mismo sexo.",
+      "biblicalReferences": [
+        "Génesis 2:24",
+        "Mateo 19:4-6",
+        "Efesios 5:22-33",
+        "Hebreos 13:4"
+      ],
+      "tags": ["matrimonio", "pacto", "hombre y mujer", "familia"]
+    },
+    {
+      "title": "ARTÍCULO 15 — DIVORCIO Y NUEVO MATRIMONIO",
+      "slug": "articulo-15-divorcio-y-nuevo-matrimonio",
+      "docNumber": "REN-DOC-015",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Familia y Pastoral",
+      "status": "BORRADOR",
+      "content": "RENACER reconoce la enseñanza bíblica sobre la seriedad y permanencia del pacto matrimonial.\n\nRENACER también reconoce circunstancias bíblicamente justificadas en las cuales puede existir divorcio y nuevo matrimonio.\n\nEl tratamiento pastoral de cada caso deberá considerar las Escrituras y las circunstancias particulares.",
+      "biblicalReferences": [
+        "Mateo 5:31-32",
+        "Mateo 19:3-9",
+        "Marcos 10:2-12",
+        "Lucas 16:18",
+        "1 Corintios 7:10-16",
+        "Malaquías 2:16"
+      ],
+      "tags": ["divorcio", "nuevo matrimonio", "cuidado pastoral", "pacto"]
+    },
+    {
+      "title": "ARTÍCULO 16 — LA VIDA HUMANA",
+      "slug": "articulo-16-la-vida-humana",
+      "docNumber": "REN-DOC-016",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Ética y Santidad de la Vida",
+      "status": "BORRADOR",
+      "content": "RENACER afirma el valor y la dignidad de la vida humana desde la concepción.\n\nRENACER sostiene una posición provida y se opone al aborto.",
+      "biblicalReferences": [
+        "Génesis 1:26-27",
+        "Salmo 139:13-16",
+        "Jeremías 1:5"
+      ],
+      "tags": ["vida humana", "provida", "dignidad", "concepcion"]
+    },
+    {
+      "title": "ARTÍCULO 17 — VIDA CRISTIANA Y ÉTICA",
+      "slug": "articulo-17-vida-cristiana-y-etica",
+      "docNumber": "REN-DOC-017",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Ética Cristiana",
+      "status": "BORRADOR",
+      "content": "RENACER enseña una vida de santidad, dominio propio, amor, integridad y responsabilidad.\n\n**Alcohol:**\nRENACER no establece que cualquier consumo de alcohol sea automáticamente pecado. La embriaguez y el abuso son contrarios a la vida cristiana. Un consumo pequeño, como un brindis, no debe declararse automáticamente pecado. Si el consumo puede hacer tropezar a otro creyente, debe prevalecer el amor y la abstención.\n\n**Tabaco y vapeo:**\nRENACER no permite el uso de tabaco ni vapeo como práctica compatible con la vida cristiana que la iglesia enseña.\n\n**Drogas:**\nRENACER no permite el uso de drogas ilegales.\n\n**Sexualidad:**\nRENACER enseña que las relaciones sexuales deben mantenerse dentro del matrimonio. RENACER no reconoce la práctica homosexual como compatible con su enseñanza bíblica sobre sexualidad.\n\nLa iglesia debe tratar a todas las personas con dignidad, respeto y amor, aun cuando no comparta o apruebe determinadas conductas.",
+      "biblicalReferences": [
+        "1 Corintios 6:9-11,19-20",
+        "Romanos 14:13-21",
+        "Efesios 5:18",
+        "1 Tesalonicenses 4:3-7",
+        "1 Pedro 1:15-16"
+      ],
+      "tags": ["vida cristiana", "etica", "santidad", "alcohol", "sexualidad", "respeto"]
+    },
+    {
+      "title": "ARTÍCULO 18 — DIEZMOS Y OFRENDAS",
+      "slug": "articulo-18-diezmos-y-ofrendas",
+      "docNumber": "REN-DOC-018",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Mayordomía Cristiana",
+      "status": "BORRADOR",
+      "content": "RENACER enseña el principio bíblico de generosidad y diezmos.\n\nEl diezmo se presenta como una decisión de obediencia y corazón delante de Dios, no como mecanismo de coerción.\n\nLas ofrendas son voluntarias.\n\nLa incapacidad económica para diezmar no debe ser utilizada automáticamente como motivo para quitar membresía o excluir a una persona.",
+      "biblicalReferences": [
+        "Malaquías 3:10",
+        "Mateo 23:23",
+        "2 Corintios 9:6-8",
+        "1 Timoteo 6:17-19"
+      ],
+      "tags": ["diezmos", "ofrendas", "mayordomia", "generosidad", "administracion"]
+    },
+    {
+      "title": "ARTÍCULO 19 — SEGUNDA VENIDA, RESURRECCIÓN Y ETERNIDAD",
+      "slug": "articulo-19-segunda-venida-resurreccion-y-eternidad",
+      "docNumber": "REN-DOC-019",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Escatología",
+      "status": "BORRADOR",
+      "content": "RENACER cree:\n- en la segunda venida literal de Jesucristo;\n- en la resurrección de los muertos;\n- en el juicio final;\n- en la vida eterna;\n- en el cielo;\n- en la condenación eterna.\n\nRENACER no impondrá una posición rígida sobre el momento exacto del rapto, tribulación o milenio más allá de aquello que pueda sostenerse claramente desde las Escrituras.",
+      "biblicalReferences": [
+        "Juan 14:1-3",
+        "Hechos 1:11",
+        "1 Tesalonicenses 4:13-18",
+        "Apocalipsis 20:11-15",
+        "Apocalipsis 21:1-4"
+      ],
+      "tags": ["segunda venida", "resurreccion", "juicio final", "cielo", "eternidad"]
+    },
+    {
+      "title": "ARTÍCULO 20 — AUTORIDAD DE LA DOCTRINA DE RENACER",
+      "slug": "articulo-20-autoridad-de-la-doctrina-de-renacer",
+      "docNumber": "REN-DOC-020",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Gobernanza Doctrinal",
+      "status": "BORRADOR",
+      "content": "Toda doctrina oficial de RENACER debe estar sometida a las Sagradas Escrituras.\n\nLos documentos doctrinales oficiales deben pasar por el proceso institucional de revisión y adopción establecido por RENACER.\n\nNingún documento en estado BORRADOR o EN_REVISION debe presentarse como doctrina oficial.\n\nLa doctrina oficial deberá conservar:\n- versión;\n- fecha;\n- estado;\n- historial;\n- registro de aprobación/adopción.",
+      "biblicalReferences": [
+        "Gálatas 1:8-9",
+        "1 Timoteo 4:16",
+        "Tito 2:1"
+      ],
+      "tags": ["autoridad doctrinal", "escrituras", "adopcion", "inmutabilidad", "proceso institucional"]
+    }
+  ]
+}

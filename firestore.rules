@@ -1,0 +1,106 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // =========================================================================
+    // FUNCIONES DE SEGURIDAD Y ROLES
+    // =========================================================================
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+    
+    function hasRole(role) {
+      return isAuthenticated() && getUserData().role == role;
+    }
+    
+    function isPastorFundador() {
+      return isAuthenticated() && getUserData().role == 'PASTOR_FUNDADOR';
+    }
+    
+    function isPastorFundadorOrAdmin() {
+      return isAuthenticated() && (
+        getUserData().role == 'ADMINISTRADOR' || 
+        getUserData().role == 'PASTOR_FUNDADOR'
+      );
+    }
+    
+    // =========================================================================
+    // 1. REGLAS PARA DOCUMENTOS OFICIALES (documents)
+    // =========================================================================
+    match /documents/{documentId} {
+      allow read: if resource.data.status == 'ADOPTADO' || isAuthenticated();
+      allow create: if isAuthenticated();
+      
+      // Solo PASTOR_FUNDADOR puede adoptar oficialmente una doctrina
+      allow update: if isAuthenticated() && (
+        request.resource.data.status != 'ADOPTADO' || isPastorFundador()
+      ) && (
+        request.resource.data.versions.size() >= resource.data.versions.size()
+      );
+      
+      allow delete: if isPastorFundador();
+    }
+    
+    // =========================================================================
+    // 2. EXPEDIENTE DE ADOPCIÓN DOCTRINAL (adoption_records)
+    // =========================================================================
+    match /adoption_records/{recordId} {
+      allow read: if isAuthenticated();
+      
+      // Creación permitida a Fundador o Administrador en preparación
+      allow create: if isPastorFundadorOrAdmin();
+      
+      // Actualización de decisión y estado ADOPTADO estrictamente restringida a PASTOR_FUNDADOR
+      allow update: if isPastorFundador() || (
+        isPastorFundadorOrAdmin() && 
+        request.resource.data.resultingStatus == resource.data.resultingStatus &&
+        request.resource.data.adoptionDecision == resource.data.adoptionDecision
+      );
+      
+      // Inmutabilidad: No se permite eliminar expedientes adoptados
+      allow delete: if false;
+    }
+    
+    // =========================================================================
+    // 3. REGISTROS DE AUDITORÍA (audit_logs)
+    // =========================================================================
+    match /audit_logs/{logId} {
+      allow read: if isPastorFundadorOrAdmin() || hasRole('CONSEJO_GOBIERNO');
+      allow create: if true;
+      allow update, delete: if false;
+    }
+    
+    // =========================================================================
+    // 4. USUARIOS Y PERFILES (users)
+    // =========================================================================
+    match /users/{userId} {
+      allow read: if isAuthenticated() && (request.auth.uid == userId || isPastorFundadorOrAdmin());
+      allow create, update: if isAuthenticated() && (
+        request.auth.uid == userId || isPastorFundadorOrAdmin()
+      );
+      allow delete: if isPastorFundador();
+    }
+    
+    // =========================================================================
+    // 5. CENTRO LEGAL (legal_processes)
+    // =========================================================================
+    match /legal_processes/{processId} {
+      allow read: if isAuthenticated();
+      allow write: if isPastorFundadorOrAdmin() || hasRole('CONSEJO_GOBIERNO') || hasRole('REVISOR_LEGAL');
+    }
+    
+    // =========================================================================
+    // 6. COLA DE IMPORTACIÓN JSON (import_queue)
+    // =========================================================================
+    match /import_queue/{queueId} {
+      allow read: if isAuthenticated();
+      allow create, update: if isPastorFundadorOrAdmin();
+      allow delete: if isPastorFundador();
+    }
+  }
+}

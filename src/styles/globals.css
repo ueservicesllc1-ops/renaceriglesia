@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+  }
+
+  body {
+    background-color: #0b1120;
+    color: #f1f5f9;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  img, video, svg {
+    max-width: 100%;
+  }
+}
+
+/* ===== Mobile-first: ajustes globales para teléfonos y tablets ===== */
+.app-main {
+  overflow-wrap: anywhere;
+}
+
+/* Evita zoom automático en iOS al enfocar campos */
+@media (max-width: 1023px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+  button, a, select, [role="button"] {
+    touch-action: manipulation;
+  }
+  button, select {
+    min-height: 40px;
+  }
+
+  /* Tablas con scroll horizontal en lugar de romper el layout */
+  .app-main table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Paneles sticky no deben quedar pegados en pantallas pequeñas */
+  .app-main .sticky {
+    position: static;
+  }
+
+  /* Listas con altura fija: usar altura natural en móvil */
+  .app-main [class*="max-h-["] {
+    max-height: none;
+  }
+
+  /* Relleno de paneles grandes más compacto */
+  .app-main [class~="p-8"] {
+    padding: 1.25rem;
+  }
+  .app-main [class~="p-6"] {
+    padding: 1rem;
+  }
+
+  .app-main pre {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 639px) {
+  .app-main h1 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+  .app-main [class*="text-3xl"] {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  .app-main [class*="text-4xl"] {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+}
+
+/* Scrollbar personalizado para estética institucional */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glassmorphism y sombras */
+.glass-panel {
+  background: rgba(19, 29, 51, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-header {
+  background: rgba(11, 17, 32, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f6eece 0%, #d9ab41 50%, #cb9229 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

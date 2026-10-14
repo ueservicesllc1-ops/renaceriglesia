@@ -1,0 +1,67 @@
+@media print {
+  /* Ocultar elementos de navegación, sidebars y botones */
+  header,
+  aside,
+  nav,
+  button,
+  .no-print,
+  .sidebar,
+  .top-navbar,
+  .action-buttons,
+  .chat-widget,
+  .audit-log-panel {
+    display: none !important;
+  }
+
+  /* Formato de página limpia */
+  @page {
+    margin: 20mm 15mm 20mm 15mm;
+    size: letter portrait;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+
+  .print-document-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .print-header {
+    display: block !important;
+    border-bottom: 2px solid #1e3a8a;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+
+  .print-footer {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 8px;
+    font-size: 9pt;
+    color: #6b7280;
+    text-align: center;
+  }
+
+  /* Evitar saltos de página dentro de títulos o firmas */
+  h1, h2, h3, .signature-block {
+    page-break-after: avoid;
+  }
+
+  p, blockquote {
+    page-break-inside: avoid;
+  }
+}

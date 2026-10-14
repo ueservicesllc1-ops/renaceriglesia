@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "type": "doctrina",
+    "version": "1.0",
+    "author": "Luis Uchubanda Falconí",
+    "date": "2026-09-03",
+    "description": "Declaración de Fe y Artículos Doctrinales Oficiales de RENACER CHURCH"
+  },
+  "data": [
+    {
+      "title": "Artículo 1 — Las Sagradas Escrituras",
+      "slug": "sagradas-escrituras",
+      "docNumber": "REN-DOC-001",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Fundamentos Doctrinales",
+      "status": "BORRADOR",
+      "content": "Escribe aquí el texto oficial del Artículo 1...",
+      "biblicalReferences": [
+        "2 Timoteo 3:16-17",
+        "2 Pedro 1:20-21"
+      ],
+      "tags": [
+        "biblia",
+        "escrituras",
+        "inerrancia",
+        "doctrina"
+      ]
+    },
+    {
+      "title": "Artículo 2 — El Bautismo en Agua y las Ordenanzas",
+      "slug": "bautismo-en-agua",
+      "docNumber": "REN-DOC-002",
+      "category": "Declaración de Fe y Doctrina",
+      "subcategory": "Ordenanzas",
+      "status": "BORRADOR",
+      "content": "Escribe aquí el texto oficial sobre el Bautismo y Ordenanzas...",
+      "biblicalReferences": [
+        "Mateo 28:19",
+        "Hechos 2:38",
+        "Romanos 6:3-4"
+      ],
+      "tags": [
+        "bautismo",
+        "ordenanzas",
+        "fe",
+        "sacramentos"
+      ]
+    }
+  ]
+}
