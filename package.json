@@ -4,8 +4,11 @@
   "private": true,
   "description": "Sistema Central de RENACER CHURCH - RENACER CHURCH MAESTRO",
   "scripts": {
+    "index:build": "node scripts/build-site-index.mjs",
+    "predev": "node scripts/build-site-index.mjs",
     "dev": "next dev",
     "proxy": "node server/b2-proxy.mjs",
+    "prebuild": "node scripts/build-site-index.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

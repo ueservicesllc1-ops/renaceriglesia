@@ -284,6 +284,7 @@ export interface AIChatMessage {
     status: DocumentStatus | string;
     quote: string;
     isExternal?: boolean;
+    href?: string;
     externalSourceUrl?: string;
   }[];
 }

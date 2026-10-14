@@ -9,7 +9,8 @@ export type KnowledgeSourceType =
   | "DOCUMENTO_CATALOGO"
   | "DOCTRINA_ARTICULO"
   | "CONSTITUCION_ARTICULO"
-  | "MANUAL_SOP";
+  | "MANUAL_SOP"
+  | "MODULO_SISTEMA";
 
 export type KnowledgeStatusType =
   | "OFICIAL_ADOPTADO"
@@ -62,10 +63,61 @@ const STOP_WORDS = new Set([
 ]);
 
 export function extractQuestionKeywords(query: string): string[] {
-  const clean = normalizeText(query).replace(/[¿?¡!.,;:]/g, " ");
+  const clean = normalizeText(query).replace(/[¿?¡!.,;:()"]/g, " ");
   const words = clean.split(/\s+/).filter((w) => w.length > 2 && !STOP_WORDS.has(w));
-  return words;
+  // Raíces simples para atrapar variantes (sucesión/sucesor, ministro/ministerial...)
+  const stems = words.filter((w) => w.length >= 7).map((w) => w.slice(0, 5));
+  return Array.from(new Set([...words, ...stems]));
 }
+
+/**
+ * Mapa de todos los módulos/páginas del sistema, para que RENACER IA sepa
+ * qué hay en cada sección y pueda dirigir al usuario.
+ */
+export interface SystemModule {
+  name: string;
+  href: string;
+  group: string;
+  description: string;
+  keywords: string;
+}
+
+export const SYSTEM_MODULES: SystemModule[] = [
+  { name: "Inicio (Dashboard)", href: "/", group: "General", description: "Panel principal con resumen del sistema, buscador y accesos rápidos a todos los módulos.", keywords: "inicio dashboard panel resumen" },
+  { name: "Enciclopedia RENACER", href: "/enciclopedia", group: "Conocimiento", description: "Compendio consolidado por temas (bautismo, sucesión, consejo de gobierno, santa cena, seminario) con doctrina, decisiones y documentos relacionados.", keywords: "enciclopedia temas compendio" },
+  { name: "Documentos", href: "/documentos", group: "Conocimiento", description: "Biblioteca institucional de documentos oficiales con versiones, estados, comentarios e historial.", keywords: "documentos biblioteca versiones historial" },
+  { name: "Decisiones Institucionales", href: "/decisiones", group: "Conocimiento", description: "Registro de las 107+ decisiones institucionales definidas (sucesión, gobierno, doctrina, ministerios, riesgos).", keywords: "decisiones registro definidas pendientes" },
+  { name: "Doctrina (20 Artículos)", href: "/doctrina", group: "Conocimiento", description: "Declaración de Fe y Doctrina de RENACER en 20 artículos, en estado borrador no adoptado, con fundamentos bíblicos.", keywords: "doctrina fe articulos declaracion biblia teologia" },
+  { name: "Constitución", href: "/constitucion", group: "Conocimiento", description: "Constitución de RENACER (10 capítulos, 48 artículos), auditorías, revisión legal, decisiones del Pastor Fundador y paquetes ejecutivos.", keywords: "constitucion articulos capitulos auditoria legal" },
+  { name: "Bylaws (Estatutos NJ)", href: "/constitucion/auditoria", group: "Conocimiento", description: "Estatutos corporativos de RENACER CHURCH, INC. conforme a la ley sin fines de lucro de New Jersey.", keywords: "bylaws estatutos new jersey corporacion" },
+  { name: "Documentación Ministerial / Manuales", href: "/documentacion-ministerial", group: "Conocimiento", description: "Manuales institucionales: gobierno, membresía y disciplina, liderazgo ministerial, ceremonias, finanzas, seguridad, misiones, infantil y juvenil.", keywords: "manuales manual documentacion ministerial reglamentos procedimientos" },
+  { name: "Protección y Reglamentos", href: "/proteccion", group: "Conocimiento", description: "Políticas de protección, reglamentos y salvaguarda institucional.", keywords: "proteccion reglamentos politicas salvaguarda menores" },
+  { name: "Seguridad", href: "/seguridad", group: "Conocimiento", description: "Manual y protocolos de seguridad de la congregación y sus instalaciones.", keywords: "seguridad emergencia protocolos" },
+  { name: "Código de Ética", href: "/etica", group: "Conocimiento", description: "Código de Ética Ministerial con artículos de conducta y disciplina.", keywords: "etica codigo conducta disciplina ministros" },
+  { name: "Ceremonias", href: "/ceremonias", group: "Conocimiento", description: "Manual de ceremonias y ordenanzas: bautismos, santa cena, bodas, presentaciones, funerales.", keywords: "ceremonias ordenanzas bautismo boda funeral cena" },
+  { name: "Finanzas", href: "/finanzas", group: "Conocimiento", description: "Manual de finanzas: diezmos, ofrendas, presupuesto, tesorería y transparencia.", keywords: "finanzas diezmos ofrendas presupuesto tesoreria dinero" },
+  { name: "Misiones", href: "/misiones", group: "Conocimiento", description: "Manual de misiones y evangelismo, envío y sostenimiento de misioneros.", keywords: "misiones misioneros evangelismo" },
+  { name: "Infantil y Juvenil", href: "/infantil-juvenil", group: "Conocimiento", description: "Manual del ministerio de niños y jóvenes, protección de menores y programas.", keywords: "infantil juvenil ninos jovenes menores" },
+  { name: "Escuela de Discípulos", href: "/escuela-discipulos", group: "Formación", description: "Programa de formación de discípulos de 9 meses.", keywords: "escuela discipulos discipulado formacion nuevos creyentes" },
+  { name: "Escuela de Líderes", href: "/escuela-lideres", group: "Formación", description: "Programa de formación de líderes de 6 meses.", keywords: "escuela lideres liderazgo celulas" },
+  { name: "Seminario Bíblico RENACER", href: "/seminario", group: "Formación", description: "Seminario teológico con 104 clases, niveles y graduación.", keywords: "seminario biblico clases cursos teologia estudiantes graduacion" },
+  { name: "Docentes y Pastores", href: "/formacion-pastores", group: "Formación", description: "Formación de pastores y docentes del seminario.", keywords: "docentes pastores formacion maestros" },
+  { name: "Libros y Archivo", href: "/archivo", group: "Formación", description: "Archivo institucional y biblioteca de libros.", keywords: "libros archivo biblioteca" },
+  { name: "Libro de Creación Legal", href: "/libro/creacion-legal", group: "Formación", description: "Libro con la historia y capítulos de la creación legal de RENACER.", keywords: "libro creacion legal capitulos historia" },
+  { name: "Membresía", href: "/membresia", group: "Personas", description: "Gestión y reglas de membresía, requisitos, deberes y disciplina.", keywords: "membresia miembros membresia requisitos disciplina" },
+  { name: "Credenciales Ministeriales", href: "/credenciales", group: "Personas", description: "Escalafón y reglamento de credenciales de ministros (obrero laico, licenciado, ordenado).", keywords: "credenciales ministros ordenacion licencia" },
+  { name: "Identidad / Pastor Fundador", href: "/identidad", group: "Gobierno", description: "Identidad institucional, misión, visión y el Pastor Fundador Luis Uchubanda Falconí.", keywords: "identidad mision vision pastor fundador luis uchubanda" },
+  { name: "Gobierno", href: "/gobierno", group: "Gobierno", description: "Consejo de Gobierno, autoridades, estructura, quórum y facultades.", keywords: "gobierno consejo autoridades estructura quorum" },
+  { name: "Ministerios", href: "/ministerios", group: "Gobierno", description: "Consejo Ministerial y estructura de ministerios.", keywords: "ministerios consejo ministerial areas" },
+  { name: "Centro Legal", href: "/centro-legal", group: "Legal", description: "Centro legal de RENACER: revisión legal de documentos, materias para abogado y paquetes finales.", keywords: "legal abogado revision new jersey juridico" },
+  { name: "Versiones y Procesos", href: "/versiones", group: "Legal", description: "Control de versiones y procesos de revisión de documentos.", keywords: "versiones procesos revision control" },
+  { name: "Reportes", href: "/reportes", group: "General", description: "Reportes y estadísticas del sistema.", keywords: "reportes estadisticas informes" },
+  { name: "RENACER IA", href: "/ia", group: "Inteligencia Artificial", description: "Este asistente: consulta institucional que responde solo con información registrada en el sistema.", keywords: "ia asistente inteligencia artificial chat" },
+  { name: "Usuarios y Accesos", href: "/usuarios", group: "Administración", description: "Gestión de usuarios, roles y permisos RBAC.", keywords: "usuarios accesos roles permisos rbac" },
+  { name: "Auditoría", href: "/auditoria", group: "Administración", description: "Registro de auditoría (audit log) de acciones en el sistema.", keywords: "auditoria audit log registro acciones" },
+  { name: "Importación", href: "/importacion", group: "Administración", description: "Importación de datos y documentos en formato JSON.", keywords: "importacion importar json datos configuracion" },
+  { name: "Adopción Doctrinal (Admin)", href: "/admin/doctrine/adoption", group: "Administración", description: "Flujo de adopción formal de la doctrina por el Pastor Fundador.", keywords: "adopcion doctrina admin adoptar" },
+];
 
 // Verificación de permisos de confidencialidad
 export function isAuthorizedForConfidentiality(
@@ -92,7 +144,7 @@ export function searchRenacerKnowledge(
   query: string,
   options: SearchKnowledgeOptions = {}
 ): KnowledgeSearchResult[] {
-  const q = normalizeText(query);
+  const q = normalizeText(query).replace(/[¿?¡!.,;:()"]/g, " ").replace(/\s+/g, " ").trim();
   if (!q) return [];
 
   const keywords = extractQuestionKeywords(query);
@@ -262,6 +314,73 @@ export function searchRenacerKnowledge(
         score: score,
         confidentiality: doc.confidentiality,
         tags: doc.tags,
+      });
+    }
+  }
+
+  // 4. Documentos del catálogo maestro que aún no tienen contenido en la biblioteca
+  const seenCodes = new Set(allDocs.map((d) => d.documentNumber));
+  for (const cat of INITIAL_MASTER_CATALOG) {
+    if (seenCodes.has(cat.documentNumber)) continue;
+    const text = normalizeText(`${cat.title} ${cat.shortTitle} ${cat.description} ${cat.subcategory} ${cat.owner}`);
+    const codeNorm = normalizeText(cat.documentNumber);
+    let score = 0;
+    if (codeNorm === q) score += 100;
+    else if (codeNorm.includes(q)) score += 55;
+    if (text.includes(q)) score += 30;
+    for (const kw of keywords) {
+      if (normalizeText(cat.title).includes(kw)) score += 14;
+      if (text.includes(kw)) score += 8;
+    }
+    if (score > 0) {
+      if (!isAuthorizedForConfidentiality(cat.confidentiality, options.userRole)) continue;
+      const adopted = cat.status === ("ADOPTADO" as any);
+      results.push({
+        id: cat.documentId,
+        code: cat.documentNumber,
+        title: cat.title,
+        type: "DOCUMENTO_CATALOGO",
+        category: String(cat.category),
+        status: adopted ? "OFICIAL_ADOPTADO" : "PLANIFICADO_NO_ADOPTADA",
+        statusLabel: adopted ? "OFICIAL ADOPTADO" : `${cat.status} v${cat.version} • NO ADOPTADA`,
+        version: cat.version,
+        snippet: cat.description.substring(0, 160) + "...",
+        content: cat.description,
+        href: `/documentos/${cat.documentNumber}`,
+        score,
+        confidentiality: cat.confidentiality,
+        tags: [],
+      });
+    }
+  }
+
+  // 5. Módulos / secciones del sistema
+  for (const mod of SYSTEM_MODULES) {
+    const nameNorm = normalizeText(mod.name);
+    const textNorm = normalizeText(`${mod.description} ${mod.keywords} ${mod.group}`);
+    let score = 0;
+    if (nameNorm.includes(q)) score += 40;
+    if (textNorm.includes(q)) score += 20;
+    for (const kw of keywords) {
+      if (nameNorm.includes(kw)) score += 14;
+      if (textNorm.includes(kw)) score += 7;
+    }
+    if (score > 0) {
+      results.push({
+        id: `modulo-${mod.href}`,
+        code: "MÓDULO",
+        title: mod.name,
+        type: "MODULO_SISTEMA",
+        category: mod.group,
+        status: "OFICIAL_ADOPTADO",
+        statusLabel: `Sección del sistema • ${mod.group}`,
+        version: "-",
+        snippet: mod.description,
+        content: mod.description,
+        href: mod.href,
+        score,
+        confidentiality: "PUBLICO",
+        tags: [],
       });
     }
   }

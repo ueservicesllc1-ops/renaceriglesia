@@ -45,3 +45,6 @@ yarn-error.log*
 Thumbs.db
 
 .env.example
+
+# Índice generado
+src/data/site-index.json
